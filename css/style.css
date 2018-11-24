@@ -99,7 +99,8 @@ path {
 }
 .form {
   margin: 40px;
-  position: relative;
+  position: absolute  ;
+  overflow:   auto ; 
 }
 label {
   color:  #c2c2c5;
