@@ -8,7 +8,11 @@ model = joblib.load('model/nb_model.sav')
 
 app = Flask(__name__)
 
-@app.route('/api', methods=['POST'])
+@app.route('/', methods=['GET'])
+def display_form():
+    return render_template('index.html')
+
+@app.route('/api', methods=['GET', 'POST'])
 def get_delay():
     result=request.form
     # melakukan proses input
