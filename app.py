@@ -16,12 +16,12 @@ def display_form():
 def get_delay():
     result=request.form
     # melakukan proses input
-    user_input = dataprocessing.collectData(result)
+    #user_input = dataprocessing.collectData(result)
     # mendapatkan prediksi
-    print(user_input)
-    heart_disease_pred = model.predict(user_input)
+    #print(user_input)
+    #heart_disease_pred = model.predict(user_input)
     # return prediksi
-    return json.dumps({'predict':heart_disease_pred});
+    return(json.dumps({'predict':1}))
 
 if __name__ == '__main__':
     app.run(port=8080, debug=True)
