@@ -18,6 +18,7 @@ def get_delay():
     # melakukan proses input
     user_input = dataprocessing.collectData(result)
     # mendapatkan prediksi
+    print(user_input)
     heart_disease_pred = model.predict(user_input)
     # return prediksi
     return json.dumps({'predict':heart_disease_pred});

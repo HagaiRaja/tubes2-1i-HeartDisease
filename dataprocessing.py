@@ -1,21 +1,29 @@
 import pandas as pd
 
 def collectData(res):
-    user_input = {'Column1' : res.age,
-                  'Column2' : res.sex,
-                  'Column3' : res.chest-pain,
-                  'Column4' : res.rbp,
-                  'Column5' : res.sc,
-                  'Column6' : res.fbs,
-                  'Column7' : res.recg,
-                  'Column8' : res.mhra,
-                  'Column9' : res.eia,
-                  'Column10' : res.stdie,
-                  'Column11' : res.pests,
-                  'Column12' : res.nomv,
-                  'Column13' : res.thal}
 
-    user_input_dataframe = pd.DataFrame.from_dict(user_input)
+    user_input = {'Column1' : res.get('age'),
+                  'Column2' : res.get('sex'),
+                  'Column3' : res.get('chest-pain'),
+                  'Column4' : res.get('rbp'),
+                  'Column5' : res.get('sc'),
+                  'Column6' : res.get('fbs'),
+                  'Column7' : res.get('recg'),
+                  'Column8' : res.get('mhra'),
+                  'Column9' : res.get('eia'),
+                  'Column10' : res.get('stdie'),
+                  'Column11' : res.get('pests'),
+                  'Column12' : res.get('nomv'),
+                  'Column13' : res.get('thal')}
+
+
+    for i in user_input:
+        if(user_input[i] == None):
+            user_input[i] = ''
+        else:
+            user_input[i] = int(user_input[i])
+
+    user_input_dataframe = pd.DataFrame(user_input, index=[0])
 
     return(user_input_dataframe)
 
