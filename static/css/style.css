@@ -98,7 +98,7 @@ path {
   stroke-dasharray: 240 1386;
 }
 .form {
-  margin: 40px;
+  margin: 30px;
   position: absolute;
   overflow: auto; 
 }
@@ -106,9 +106,9 @@ label {
   color:  #c2c2c5;
   display: block;
   font-size: 14px;
-  height: 16px;
-  margin-top: 20px;
-  margin-bottom: 5px;
+  height: 10px;
+  margin-top: 5px;
+  margin-bottom: 20px;
 }
 input {
   background: transparent;
