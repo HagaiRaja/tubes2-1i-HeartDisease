@@ -1,4 +1,5 @@
 @import url('https://rsms.me/inter/inter-ui.css');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 ::selection {
   background: #2D2F36;
 }
@@ -17,7 +18,7 @@ html, body {
 
 body {
   background: white;
-  font-family: 'Inter UI', sans-serif;
+  font-family: 'Montserrat', 'Inter UI', sans-serif;
 }
 
 .page {
@@ -55,7 +56,7 @@ body {
   height: calc(100% - 40px);
   top: 20px;
   position: relative;
-  width: 30%;
+  width: 40%;
 }
 @media (max-width: 767px) {
   .left {
@@ -83,7 +84,7 @@ body {
   box-shadow: 0px 0px 40px 16px rgba(0,0,0,0.22);
   color: #F1F1F2;
   position: relative;
-  width: 40%;
+  width: 60%;
 }
 @media (max-width: 767px) {
   .right {
@@ -125,7 +126,7 @@ label {
 >>>>>>> deed4883b570f7a2f1293c5ebc80b11b133d1894
 }
 input { 
-  color: black;
+  color: #474A59 !important;
   background-color: #fff;
   border: 0;
   font-size: 20px;
@@ -135,6 +136,7 @@ input {
   width: 60%;
   display: block;
   border-radius: 4px;
+  padding-left: 5px;
 }
 select {
   background-color: #fff;
@@ -163,6 +165,7 @@ input[type="submit"]{
 
 input[type="text"]{
   color: black;
+  padding-left: 5px;
 }
 /*#submit {
   color: #707075;
@@ -186,7 +189,7 @@ input[type="text"]{
   display: none; /*hide original SELECT element:*/
 }
 .select-selected {
-  background-color: DodgerBlue;
+  background-color: #fff;
   border-radius: 3px;
 }
 /*style the arrow inside the select element:*/
@@ -198,16 +201,16 @@ input[type="text"]{
   width: 0;
   height: 0;
   border: 6px solid transparent;
-  border-color: #fff transparent transparent transparent;
+  border-color: #474A59 transparent transparent transparent;
 }
 /*point the arrow upwards when the select box is open (active):*/
 .select-selected.select-arrow-active:after {
-  border-color: transparent transparent #fff transparent;
+  border-color: transparent transparent #474A59 transparent;
   top: 7px;
 }
 /*style the items (options), including the selected item:*/
 .select-items div,.select-selected {
-  color: #ffffff;
+  color: #474A59;
   padding: 8px 16px;
   border: 1px solid transparent;
   border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
@@ -217,7 +220,7 @@ input[type="text"]{
 /*style items (options):*/
 .select-items {
   position: absolute;
-  background-color: DodgerBlue;
+  background-color: #F1F1F2;
   top: 100%;
   left: 0;
   right: 0;
@@ -229,4 +232,32 @@ input[type="text"]{
 }
 .select-items div:hover, .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+/*UPLOAD PHOTO BUTTON STYLE*/
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  display: block;
+}
+
+.btn-file:hover {
+  cursor: pointer !important;
+}
+
+#file:hover {
+  cursor: pointer !important;
 }

@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../pmbpmk/css/style.css">
 </head>
 
 <body>
@@ -50,64 +51,95 @@
         <div id="menu1" class="tab-pane fade in active" >
           <form action="/api" method="POST" style="margin-top: 20px">
             <label for="age">Age</label>
-            <input type="text" id="age" name="age">
+            <input type="number" id="age" name="age">
             <label for="sex">Sex</label>
-            <select name="sex" id="sex">
-              <option value="1">Male</option>
-              <option value="0">Female</option>
-            </select>
+              <div class="custom-select" style="width:200px;">
+                  <select name="sex" id="sex">
+                      <option disabled selected value> -- Unknown -- </option>
+                      <option value="1">Male</option>
+                      <option value="0">Female</option>
+                  </select>
+              </div>
             <label for="chest-pain">Chest Pain Type</label>
-            <select name="chest-pain" id="chest-pain">
-              <option value="1">Typical Angina</option>
-              <option value="2">Atypical Angina</option>
-              <option value="3">Non-anginal Pain</option>
-              <option value="4">Asymptotic</option>
-            </select>
+              <div class="custom-select" style="width:200px;">
+                  <select name="chest-pain" id="chest-pain">
+                      <option disabled selected value> -- Unknown -- </option>
+                      <option value="1">Typical Angina</option>
+                      <option value="2">Atypical Angina</option>
+                      <option value="3">Non-anginal Pain</option>
+                      <option value="4">Asymptotic</option>
+                  </select>
+              </div>
+
             <label for="rbp">Resting Blood Pressure</label>
-            <input type="text" id="rbp" name="rbp">
+            <input type="number" id="rbp" name="rbp">
             <label for="sc">Serum Cholesterol</label>
-            <input type="text" id="sc" name="sc">
+            <input type="number" id="sc" name="sc">
             <label for="fbs">Fasting Blood Sugar</label>
-            <select name="fbs" id="fbs">
-              <option value="1">True</option>
-              <option value="0">False</option>
-            </select>
+              <div class="custom-select" style="width:200px;">
+                  <select name="fbs" id="fbs">
+                      <option disabled selected value> -- Unknown -- </option>
+                      <option value="1">True</option>
+                      <option value="0">False</option>
+                  </select>
+              </div>
+
             <label for="recg">Resting ECG</label>
-            <select name="recg" id="recg">
-              <option value="0">Normal</option>
-              <option value="1">Having ST-T Wave Abnormality</option>
-              <option value="2">Left Ventricular Hyperthrophy</option>
-            </select>
+              <div class="custom-select" style="width:200px;">
+                  <select name="recg" id="recg">
+                      <option disabled selected value> -- Unknown -- </option>
+                      <option value="0">Normal</option>
+                      <option value="1">Having ST-T Wave Abnormality</option>
+                      <option value="2">Left Ventricular Hyperthrophy</option>
+                  </select>
+              </div>
+
             <label for="mhra">Max-Heart Rate Received</label>
-            <input type="text" id="mhra" name="mhra">
+            <input type="number" id="mhra" name="mhra">
             <label for="eia">Exercised Induced Angina</label>
-            <select name="eia" id="eia">
-              <option value="1">Yes</option>
-              <option value="0">No</option>
-            </select>
+              <div class="custom-select" style="width:200px;">
+                  <select name="eia" id="eia">
+                      <option disabled selected value> -- Unknown -- </option>
+                      <option value="1">Yes</option>
+                      <option value="0">No</option>
+                  </select>
+              </div>
+
             <label for="stdie">ST Depressions Induced by Exercise</label>
-            <input type="text" id="stdie" name="stdie">
+            <input type="number" id="stdie" name="stdie">
             <label for="pests">Peak Exercise ST Segment</label>
-            <select name="pests" id="pests">
-              <option value="1">Upsloping</option>
-              <option value="2">Flat</option>
-              <option value="3">Downsloping</option>
-            </select>
+              <div class="custom-select" style="width:200px;">
+                  <select name="pests" id="pests">
+                      <option disabled selected value> -- Unknown -- </option>
+                      <option value="1">Upsloping</option>
+                      <option value="2">Flat</option>
+                      <option value="3">Downsloping</option>
+                  </select>
+              </div>
+
             <label for="nomv">Number of Major Vessels colored by Flourosopy</label>
-            <input type="text" id="nomv" name="nom">
+            <input type="number" id="nomv" name="nom">
             <label for="thal">Thalx</label>
-            <select name="thal" id="thal">
-              <option value="3">Normal</option>
-              <option value="6">Fixed Defect</option>
-              <option value="7">Reversable Defect</option>
-            </select>
+              <div class="custom-select" style="width:200px;">
+                  <select name="thal" id="thal">
+                      <option disabled selected value> -- Unknown -- </option>
+                      <option value="3">Normal</option>
+                      <option value="6">Fixed Defect</option>
+                      <option value="7">Reversable Defect</option>
+                  </select>
+              </div>
+
             <input type="submit" id="submit" value="SUBMIT">
           </form>
         </div>
         <div id="menu2" class="tab-pane fade">
           <form action="/api" method="POST">
             <label for="file">File</label>
-            <input id="file" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" style="margin-top: 10px; margin-bottom: 30px" />
+              <span class="input-group-btn">
+                    <button class="btn btn-default btn-file">
+                        Browse&hellip; <input type="file" id="file" required="">
+                    </button>
+                </span>
             <input type="submit" id="submit" value="SUBMIT">
           </form>
         </div>
