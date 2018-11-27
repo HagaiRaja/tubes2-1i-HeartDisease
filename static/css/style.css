@@ -100,18 +100,27 @@ path {
 .form {
   margin: 30px;
   position: absolute;
-  overflow: auto; 
+  overflow-y:  scroll; 
+  overflow: hidden;
+  height: 400px;
 }
 label {
   color:  #c2c2c5;
   display: block;
   font-size: 14px;
+<<<<<<< HEAD
   height: 10px;
   margin-top: 5px;
   margin-bottom: 20px;
+=======
+  height: 16px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+>>>>>>> deed4883b570f7a2f1293c5ebc80b11b133d1894
 }
 input {
   background: transparent;
+  /*background-color: #555;*/
   border: 0;
   color: #f2f2f2;
   font-size: 20px;
@@ -123,7 +132,15 @@ input {
 input::-moz-focus-inner { 
   border: 0; 
 }
-#submit {
+
+input[type="submit"]{
+    /* change these properties to whatever you want */
+    background-color:   #20B2AA;
+    color: #fff;
+    border-radius: 10px;
+    width: 15%;
+}
+/*#submit {
   color: #707075;
   margin-top: 40px;
   transition: color 300ms;
@@ -134,3 +151,4 @@ input::-moz-focus-inner {
 #submit:active {
   color: #d0d0d2;
 }
+*/
