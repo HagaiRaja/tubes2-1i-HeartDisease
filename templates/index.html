@@ -1,52 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
-
-<div class="container">
-  <h2>Dynamic Tabs</h2>
-  <p>To make the tabs toggleable, add the data-toggle="tab" attribute to each link. Then add a .tab-pane class with a unique ID for every tab and wrap them inside a div element with class .tab-content.</p>
-
-  <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-    <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
-    <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
-    <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
-  </ul>
-
-  <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
-      <h3>HOME</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-    <div id="menu1" class="tab-pane fade">
-      <h3>Menu 1</h3>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div id="menu2" class="tab-pane fade">
-      <h3>Menu 2</h3>
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-    </div>
-    <div id="menu3" class="tab-pane fade">
-      <h3>Menu 3</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-    </div>
-  </div>
-</div>
-
-</body>
-
-</html>
- -->
-
-
 <!DOCTYPE html>
 <html lang="en" >
 
@@ -62,7 +13,7 @@
 
 <body>
 
-<div class="page">
+  <div class="page">
   <div class="container">
     <div class="left">
       <div class="login">Input Data</div>
@@ -89,146 +40,162 @@
                   id="stop878" />
           </linearGradient>
         </defs>
-<<<<<<< HEAD
-        <path d="m 30,127 239.99984,-2e-4 c 0,0 24.99263,0.79932 25.00016,35.00016 0.008,34.20084 -25.00016,35 -25.00016,35 h -239.99984 c 0,-0.0205 -25,4.01348 -25,38.5 0,34.48652 25,38.5 25,38.5 h 215 c 0,0 20,-0.99604 20,-25 0,-24.00396 -20,-25 -20,-25 h -190 c 0,0 -20,1.71033 -20,25 0,24.00396 20,25 20,25 h 168.57143" />
-      </svg>
-=======
         <path d="m 40,100 239.99984,-2e-4 c 0,0 24.99263,0.79932 25.00016,35.00016 0.008,34.20084 -25.00016,35 -25.00016,35 h -239.99984 c 0,-0.0205 -25,4.01348 -25,38.5 0,34.48652 25,38.5 25,38.5 h 215 c 0,0 20,-0.99604 20,-25 0,-24.00396 -20,-25 -20,-25 h -190 c 0,0 -20,1.71033 -20,25 0,24.00396 20,25 20,25 h 168.57143" />
       </svg> -->
       <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#menu1">Form</a></li>
-        <li><a data-toggle="tab" href="#menu2">Upload File</a></li>
+        <li class="active" style="width:50%;"><a data-toggle="tab" href="#menu1">Form</a></li>
+        <li style="width:50%;"><a data-toggle="tab" href="#menu2">Upload File</a></li>
       </ul>
-      <div class="tab-content" style="height: 400px; overflow: auto; margin-left: 5%">
+      <div class="tab-content" style="height: 400px; overflow: auto; margin-left: 5%;">
         <div id="menu1" class="tab-pane fade in active" >
-          <form action="/api" method="POST">
+          <form action="/api" method="POST" style="margin-top: 20px">
             <label for="age">Age</label>
             <input type="text" id="age" name="age">
             <label for="sex">Sex</label>
-            <div class="custom-select" style="width:200px;">
-              <select name="sex" id="sex">
-                <option value="1">Male</option>
-                <option value="0">Female</option>
-              </select>
-            </div>
+            <select name="sex" id="sex">
+              <option value="1">Male</option>
+              <option value="0">Female</option>
+            </select>
             <label for="chest-pain">Chest Pain Type</label>
-            <input type="text" id="chest-pain" name="chest-pain">
+            <select name="chest-pain" id="chest-pain">
+              <option value="1">Typical Angina</option>
+              <option value="2">Atypical Angina</option>
+              <option value="3">Non-anginal Pain</option>
+              <option value="4">Asymptotic</option>
+            </select>
             <label for="rbp">Resting Blood Pressure</label>
             <input type="text" id="rbp" name="rbp">
             <label for="sc">Serum Cholesterol</label>
             <input type="text" id="sc" name="sc">
             <label for="fbs">Fasting Blood Sugar</label>
-            <input type="text" id="fbs" name="fbs">
+            <select name="fbs" id="fbs">
+              <option value="1">True</option>
+              <option value="0">False</option>
+            </select>
             <label for="recg">Resting ECG</label>
-            <input type="text" id="recg" name="recg">
+            <select name="recg" id="recg">
+              <option value="0">Normal</option>
+              <option value="1">Having ST-T Wave Abnormality</option>
+              <option value="2">Left Ventricular Hyperthrophy</option>
+            </select>
             <label for="mhra">Max-Heart Rate Received</label>
             <input type="text" id="mhra" name="mhra">
             <label for="eia">Exercised Induced Angina</label>
-            <input type="text" id="eia" name="eia">
+            <select name="eia" id="eia">
+              <option value="1">Yes</option>
+              <option value="2">No</option>
+            </select>
             <label for="stdie">ST Depressions Induced by Exercise</label>
             <input type="text" id="stdie" name="stdie">
             <label for="pests">Peak Exercise ST Segment</label>
-            <input type="text" id="pests" name="pests">
+            <select name="recg" id="recg">
+              <option value="1">Upsloping</option>
+              <option value="2">Flat</option>
+              <option value="3">Downsloping</option>
+            </select>
             <label for="nomv">Number of Major Vessels colored by Flourosopy</label>
-            <input type="text" id="nomv" name="nomv">
+            <input type="text" id="nomv" name="nom">
             <label for="thal">Thalx</label>
-            <input type="text" id="thal" name="thal">
-            <input type="submit" id="submit" value="Submit">
+            <select name="thal" id="thal">
+              <option value="3">Normal</option>
+              <option value="6">Fixed Defect</option>
+              <option value="7">Reversable Defect</option>
+            </select>
+            <input type="submit" id="submit" value="SUBMIT">
           </form>
         </div>
         <div id="menu2" class="tab-pane fade">
           <form action="/api" method="POST">
             <label for="file">File</label>
-            <input id="file" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
-            <input type="submit" id="submit" value="Submit">
+            <input id="file" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" style="margin-top: 10px; margin-bottom: 30px" />
+            <input type="submit" id="submit" value="SUBMIT">
           </form>
         </div>
       </div>
     </div>
   </div>
 </div>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js'></script>
+
+  
+
+  <script  src="js/index.js"></script>
 
 
-
-<script type="text/javascript" src="../static/js/index.js"></script>
-
-<script>
-    var x, i, j, selElmnt, a, b, c;
-    /*look for any elements with the class "custom-select":*/
-    x = document.getElementsByClassName("custom-select");
-    for (i = 0; i < x.length; i++) {
-        selElmnt = x[i].getElementsByTagName("select")[0];
-        /*for each element, create a new DIV that will act as the selected item:*/
-        a = document.createElement("DIV");
-        a.setAttribute("class", "select-selected");
-        a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-        x[i].appendChild(a);
-        /*for each element, create a new DIV that will contain the option list:*/
-        b = document.createElement("DIV");
-        b.setAttribute("class", "select-items select-hide");
-        for (j = 0; j < selElmnt.length; j++) {
-            /*for each option in the original select element,
-            create a new DIV that will act as an option item:*/
-            c = document.createElement("DIV");
-            c.innerHTML = selElmnt.options[j].innerHTML;
-            c.addEventListener("click", function(e) {
-                /*when an item is clicked, update the original select box,
-                and the selected item:*/
-                var y, i, k, s, h;
-                s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-                h = this.parentNode.previousSibling;
-                for (i = 0; i < s.length; i++) {
-                    if (s.options[i].innerHTML == this.innerHTML) {
-                        s.selectedIndex = i;
-                        h.innerHTML = this.innerHTML;
-                        y = this.parentNode.getElementsByClassName("same-as-selected");
-                        for (k = 0; k < y.length; k++) {
-                            y[k].removeAttribute("class");
-                        }
-                        this.setAttribute("class", "same-as-selected");
-                        break;
-                    }
-                }
-                h.click();
-            });
-            b.appendChild(c);
-        }
-        x[i].appendChild(b);
-        a.addEventListener("click", function(e) {
-            /*when the select box is clicked, close any other select boxes,
-            and open/close the current select box:*/
-            e.stopPropagation();
-            closeAllSelect(this);
-            this.nextSibling.classList.toggle("select-hide");
-            this.classList.toggle("select-arrow-active");
-        });
-    }
-    function closeAllSelect(elmnt) {
-        /*a function that will close all select boxes in the document,
-        except the current select box:*/
-        var x, y, i, arrNo = [];
-        x = document.getElementsByClassName("select-items");
-        y = document.getElementsByClassName("select-selected");
-        for (i = 0; i < y.length; i++) {
-            if (elmnt == y[i]) {
-                arrNo.push(i)
-            } else {
-                y[i].classList.remove("select-arrow-active");
-            }
-        }
-        for (i = 0; i < x.length; i++) {
-            if (arrNo.indexOf(i)) {
-                x[i].classList.add("select-hide");
-            }
-        }
-    }
-    /*if the user clicks anywhere outside the select box,
-    then close all select boxes:*/
-    document.addEventListener("click", closeAllSelect);
-</script>
-
-
+  <script>
+      var x, i, j, selElmnt, a, b, c;
+      /*look for any elements with the class "custom-select":*/
+      x = document.getElementsByClassName("custom-select");
+      for (i = 0; i < x.length; i++) {
+          selElmnt = x[i].getElementsByTagName("select")[0];
+          /*for each element, create a new DIV that will act as the selected item:*/
+          a = document.createElement("DIV");
+          a.setAttribute("class", "select-selected");
+          a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+          x[i].appendChild(a);
+          /*for each element, create a new DIV that will contain the option list:*/
+          b = document.createElement("DIV");
+          b.setAttribute("class", "select-items select-hide");
+          for (j = 0; j < selElmnt.length; j++) {
+              /*for each option in the original select element,
+              create a new DIV that will act as an option item:*/
+              c = document.createElement("DIV");
+              c.innerHTML = selElmnt.options[j].innerHTML;
+              c.addEventListener("click", function(e) {
+                  /*when an item is clicked, update the original select box,
+                  and the selected item:*/
+                  var y, i, k, s, h;
+                  s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                  h = this.parentNode.previousSibling;
+                  for (i = 0; i < s.length; i++) {
+                      if (s.options[i].innerHTML == this.innerHTML) {
+                          s.selectedIndex = i;
+                          h.innerHTML = this.innerHTML;
+                          y = this.parentNode.getElementsByClassName("same-as-selected");
+                          for (k = 0; k < y.length; k++) {
+                              y[k].removeAttribute("class");
+                          }
+                          this.setAttribute("class", "same-as-selected");
+                          break;
+                      }
+                  }
+                  h.click();
+              });
+              b.appendChild(c);
+          }
+          x[i].appendChild(b);
+          a.addEventListener("click", function(e) {
+              /*when the select box is clicked, close any other select boxes,
+              and open/close the current select box:*/
+              e.stopPropagation();
+              closeAllSelect(this);
+              this.nextSibling.classList.toggle("select-hide");
+              this.classList.toggle("select-arrow-active");
+          });
+      }
+      function closeAllSelect(elmnt) {
+          /*a function that will close all select boxes in the document,
+          except the current select box:*/
+          var x, y, i, arrNo = [];
+          x = document.getElementsByClassName("select-items");
+          y = document.getElementsByClassName("select-selected");
+          for (i = 0; i < y.length; i++) {
+              if (elmnt == y[i]) {
+                  arrNo.push(i)
+              } else {
+                  y[i].classList.remove("select-arrow-active");
+              }
+          }
+          for (i = 0; i < x.length; i++) {
+              if (arrNo.indexOf(i)) {
+                  x[i].classList.add("select-hide");
+              }
+          }
+      }
+      /*if the user clicks anywhere outside the select box,
+      then close all select boxes:*/
+      document.addEventListener("click", closeAllSelect);
+  </script>
 
 </body>
 
