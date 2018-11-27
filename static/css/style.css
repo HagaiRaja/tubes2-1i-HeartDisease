@@ -8,20 +8,26 @@
 ::-moz-selection {
   background: #2D2F36;
 }
+
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
 body {
   background: white;
   font-family: 'Inter UI', sans-serif;
-  margin: 0;
-  padding: 20px;
 }
+
 .page {
   background-image: url(../img/test.jpeg);
   display: flex;
   flex-direction: column;
-  height: calc(100% - 40px);
+  height: calc(100%);
   position: absolute;
   place-content: center;
-  width: calc(100% - 40px);
+  width: calc(100%);
   background-size: cover;
 }
 @media (max-width: 767px) {
@@ -77,7 +83,7 @@ body {
   box-shadow: 0px 0px 40px 16px rgba(0,0,0,0.22);
   color: #F1F1F2;
   position: relative;
-  width: 80%;
+  width: 40%;
 }
 @media (max-width: 767px) {
   .right {
@@ -118,16 +124,29 @@ label {
   margin-bottom: 5px;
 >>>>>>> deed4883b570f7a2f1293c5ebc80b11b133d1894
 }
-input {
-  background: transparent;
-  /*background-color: #555;*/
+input { 
+  color: black;
+  background-color: #fff;
   border: 0;
-  color: #f2f2f2;
   font-size: 20px;
   height: 30px;
   line-height: 30px;
   outline: none !important;
-  width: 100%;
+  width: 60%;
+  display: block;
+  border-radius: 4px;
+}
+select {
+  background-color: #fff;
+  border: 0;
+  color: black;
+  font-size: 20px;
+  height: 30px;
+  line-height: 30px;
+  outline: none !important;
+  width: 60%;
+  display: block;
+  border-radius: 4px;
 }
 input::-moz-focus-inner { 
   border: 0; 
@@ -135,10 +154,15 @@ input::-moz-focus-inner {
 
 input[type="submit"]{
     /* change these properties to whatever you want */
+    margin-top:  15px;
     background-color:   #20B2AA;
     color: #fff;
     border-radius: 10px;
-    width: 15%;
+    width: 60%;
+}
+
+input[type="text"]{
+  color: black;
 }
 /*#submit {
   color: #707075;
@@ -152,3 +176,57 @@ input[type="submit"]{
   color: #d0d0d2;
 }
 */
+
+/*the container must be positioned relative:*/
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+.select-selected {
+  background-color: DodgerBlue;
+  border-radius: 3px;
+}
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
