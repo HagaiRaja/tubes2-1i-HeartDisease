@@ -24,7 +24,7 @@ def get_delay():
 
     heart_disease_pred = model.predict(user_input)
     # return prediksi
-    return(json.dumps({'predict':int(heart_disease_pred[0])}))
+    return(render_template('result.html', result = {'predict':int(heart_disease_pred[0])}))
 
 if __name__ == '__main__':
     app.run(port=8081, debug=True)
