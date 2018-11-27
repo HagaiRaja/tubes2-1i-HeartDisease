@@ -57,27 +57,50 @@
               <option value="0">Female</option>
             </select>
             <label for="chest-pain">Chest Pain Type</label>
-            <input type="text" id="chest-pain" name="chest-pain">
+            <select name="chest-pain" id="chest-pain">
+              <option value="1">Typical Angina</option>
+              <option value="2">Atypical Angina</option>
+              <option value="3">Non-anginal Pain</option>
+              <option value="4">Asymptotic</option>
+            </select>
             <label for="rbp">Resting Blood Pressure</label>
             <input type="text" id="rbp" name="rbp">
             <label for="sc">Serum Cholesterol</label>
             <input type="text" id="sc" name="sc">
             <label for="fbs">Fasting Blood Sugar</label>
-            <input type="text" id="fbs" name="fbs">
+            <select name="fbs" id="fbs">
+              <option value="1">True</option>
+              <option value="0">False</option>
+            </select>
             <label for="recg">Resting ECG</label>
-            <input type="text" id="recg" name="recg">
+            <select name="recg" id="recg">
+              <option value="0">Normal</option>
+              <option value="1">Having ST-T Wave Abnormality</option>
+              <option value="2">Left Ventricular Hyperthrophy</option>
+            </select>
             <label for="mhra">Max-Heart Rate Received</label>
             <input type="text" id="mhra" name="mhra">
             <label for="eia">Exercised Induced Angina</label>
-            <input type="text" id="eia" name="eia">
+            <select name="eia" id="eia">
+              <option value="1">Yes</option>
+              <option value="2">No</option>
+            </select>
             <label for="stdie">ST Depressions Induced by Exercise</label>
             <input type="text" id="stdie" name="stdie">
             <label for="pests">Peak Exercise ST Segment</label>
-            <input type="text" id="pests" name="pests">
+            <select name="recg" id="recg">
+              <option value="1">Upsloping</option>
+              <option value="2">Flat</option>
+              <option value="3">Downsloping</option>
+            </select>
             <label for="nomv">Number of Major Vessels colored by Flourosopy</label>
             <input type="text" id="nomv" name="nom">
             <label for="thal">Thalx</label>
-            <input type="text" id="thal" name="thal">
+            <select name="thal" id="thal">
+              <option value="3">Normal</option>
+              <option value="6">Fixed Defect</option>
+              <option value="7">Reversable Defect</option>
+            </select>
             <input type="submit" id="submit" value="SUBMIT">
           </form>
         </div>
