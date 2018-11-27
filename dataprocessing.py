@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 def collectData(res):
 
@@ -29,9 +30,22 @@ def collectData(res):
 
 
     for i in user_input:
-        if((i == 'Column1') or (i == 'Column2') or (i == 'Column3')):
-            if(user_input[i] != ''):
-                user_input[i] = int(user_input[i])
+        if((i == 'Column1') or (i == 'Column2')):
+            if(user_input[i] == ''):
+                user_input[i] = np.int64(int(-999))
+            else:
+                user_input[i] = np.int64(int(user_input[i]))
+        elif((i == 'Column4') or (i == 'Column5') or (i == 'Column6') or (i == 'Column8') or (i == 'Column9') or (i == 'Column10')):
+            if(user_input[i] == ''):
+                user_input[i] = np.float64(int(-999))
+            else:
+                user_input[i] = np.float64(int(user_input[i]))
+
+        else:
+            if(user_input[i] == ''):
+                user_input[i] = np.uint8(int(-999))
+            else:
+                user_input[i] = np.uint8(int(user_input[i]))
 
     user_input_dataframe = pd.DataFrame(user_input, index=[0])
 
@@ -44,18 +58,16 @@ def processData(datas):
     #Mendapatkan mean dan modus dari data
     data_train = pd.read_csv('tubes2_HeartDisease_train.csv')
     replacer = processTrain(data_train)
-    print(replacer)
 
 
 
     #Melakukan data cleansing
     j = 0
     for i in datas:
-        if (datas[i].empty):
-            if (type(replacer[i]) != str):
-                datas[i] = replacer[j].item()
-            else:
-                datas[i] = replacer[j]
+        if (datas[i][0] == -999):
+
+            datas[i] = replacer[j]
+            print(i, datas[i])
 
         j = j + 1
 
@@ -63,16 +75,17 @@ def processData(datas):
     #Melakukan data drop
     del(datas['Column12'])
     del(datas['Column13'])
-    print(datas)
 
 
-    c3 = int(datas['Column3'])
-    c7= int(datas['Column7'])
-    c11 = int(datas['Column11'])
+    c3 = (datas['Column3'][0])
+    c7= (datas['Column7'][0])
+    c11 = (datas['Column11'][0])
+    print(c3, c7, c11)
 
-    datas['Column3_{}'.format(c3)] = 1
-    datas['Column7_{}'.format(c7)] = '1'
-    datas['Column11_{}'.format(c11)] = '1'
+
+    datas['Column3_1'] = 1
+    datas['Column7_0'] = 1
+    datas['Column11_1'] = 1
 
     datas.drop(['Column3'],axis=1, inplace=True)
     datas.drop(['Column7'],axis=1, inplace=True)
@@ -90,13 +103,19 @@ def dropNanOnCol(df, colName) :
             listDel.append(index)
     return df.drop(listDel)
 
-def countNanRow(df, rowNum) :
+def countNanCol(df, colName) :
     count = 0
-    for column in df :
-        if (df.loc[rowNum][column] == "?") :
+    for index, row in df.iterrows():
+        if (pd.isnull(row[colName])) :
             count += 1
     return count
 
+def countNanRow(df, rowNum) :
+    count = 0
+    for column in df :
+        if (pd.isnull(df.loc[rowNum][column])) :
+            count += 1
+    return count
 
 def processTrain(data_train):
     threshold = 8
@@ -116,7 +135,7 @@ def processTrain(data_train):
         cleanData = dropNanOnCol(data_train_clean, column)
         if (column in changeWithMean) :
             replacer.append(cleanData.median()[column])
-        #         replacer.append(np.asarray(cleanData.loc[:,column], dtype=np.float).mean())
+    #         replacer.append(np.asarray(cleanData.loc[:,column], dtype=np.float).mean())
         else :
             replacer.append(cleanData.mode()[column])
 
