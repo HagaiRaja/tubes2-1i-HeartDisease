@@ -1,4 +1,5 @@
 @import url('https://rsms.me/inter/inter-ui.css');
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Nunito');
 ::selection {
   background: #2D2F36;
 }
@@ -13,11 +14,12 @@ html, body {
   height: 100%;
   padding: 0;
   margin: 0;
+  font-family: 'Nunito', 'Inter UI', sans-serif;
 }
 
 body {
   background: white;
-  font-family: 'Inter UI', sans-serif;
+  font-family: 'Nunito', 'Inter UI', sans-serif;
 }
 
 .page {
@@ -55,7 +57,7 @@ body {
   height: calc(100% - 40px);
   top: 20px;
   position: relative;
-  width: 30%;
+  width: 40%;
 }
 @media (max-width: 767px) {
   .left {
@@ -68,7 +70,6 @@ body {
 .login {
   font-size: 50px;
   font-weight: 900;
-  font-family: "SF-Pro-Display-Light";
   margin: 50px 40px 40px;
 }
 .eula {
@@ -76,14 +77,13 @@ body {
   font-size: 14px;
   line-height: 1.5;
   margin: 40px;
-  font-family: "SF-Pro-Display-Light";
 }
 .right {
   background: #474A59;
   box-shadow: 0px 0px 40px 16px rgba(0,0,0,0.22);
   color: #F1F1F2;
   position: relative;
-  width: 40%;
+  width: 60%;
 }
 @media (max-width: 767px) {
   .right {
@@ -114,27 +114,25 @@ label {
   color:  #c2c2c5;
   display: block;
   font-size: 14px;
-<<<<<<< HEAD
   height: 10px;
   margin-top: 5px;
   margin-bottom: 20px;
-=======
   height: 16px;
   margin-top: 5px;
   margin-bottom: 5px;
->>>>>>> deed4883b570f7a2f1293c5ebc80b11b133d1894
 }
 input { 
-  color: black;
+  color: #2D2F36;
   background-color: #fff;
   border: 0;
-  font-size: 20px;
+  font-size: 15px;
   height: 30px;
   line-height: 30px;
   outline: none !important;
   width: 60%;
   display: block;
   border-radius: 4px;
+    padding-left: 17px;
 }
 select {
   background-color: #fff;
@@ -180,13 +178,12 @@ input[type="text"]{
 /*the container must be positioned relative:*/
 .custom-select {
   position: relative;
-  font-family: Arial;
 }
 .custom-select select {
   display: none; /*hide original SELECT element:*/
 }
 .select-selected {
-  background-color: DodgerBlue;
+  background-color: #FFF;
   border-radius: 3px;
 }
 /*style the arrow inside the select element:*/
@@ -198,16 +195,16 @@ input[type="text"]{
   width: 0;
   height: 0;
   border: 6px solid transparent;
-  border-color: #fff transparent transparent transparent;
+  border-color: #2D2F36 transparent transparent transparent;
 }
 /*point the arrow upwards when the select box is open (active):*/
 .select-selected.select-arrow-active:after {
-  border-color: transparent transparent #fff transparent;
+  border-color: transparent transparent #2D2F36 transparent;
   top: 7px;
 }
 /*style the items (options), including the selected item:*/
 .select-items div,.select-selected {
-  color: #ffffff;
+  color: #2D2F36;
   padding: 8px 16px;
   border: 1px solid transparent;
   border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
@@ -217,7 +214,7 @@ input[type="text"]{
 /*style items (options):*/
 .select-items {
   position: absolute;
-  background-color: DodgerBlue;
+  background-color: #F1F1F2;
   top: 100%;
   left: 0;
   right: 0;
@@ -229,4 +226,57 @@ input[type="text"]{
 }
 .select-items div:hover, .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+/*UPLOAD PHOTO BUTTON STYLE*/
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+
+#file{
+  width: 100%;
+}
+
+.result-box {
+  margin: auto auto;
+  float: center;
+  background: #ff4238;
+  box-shadow: 0px 0px 40px 16px rgba(0,0,0,0.4);
+  color: white;
+  position: relative;
+  width: 40%;
+  height: 130px;
+  border-radius: 4px;
+  display: block;
+  font-size: 16pt;
+}
+.result-box p {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.back {
+  text-align: center;
+  padding-bottom: 10px;
+  text-decoration: underline;
+}
+
+.back:hover {
+  cursor: pointer;
 }

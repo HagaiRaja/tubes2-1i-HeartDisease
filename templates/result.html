@@ -8,8 +8,11 @@
 <body>
 <div class="page">
     <div class="container">
-        <div class="result-box" style="cursor: pointer;" onclick="window.location='index.html';">
-            <p>You suffer heart disease status {{result['predict']}}</p>
+        <div class="result-box">
+            <p>You suffer heart disease STATUS : [ {{result['predict']}} ]</p>
+            <div class="back" onclick="window.location='http://127.0.0.1:8081/';">
+                submit another form
+            </div>
         </div>
     </div>
 </div>
