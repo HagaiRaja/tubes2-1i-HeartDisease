@@ -65,8 +65,9 @@ def processData(datas):
     j = 0
     for i in datas:
         if (datas[i][0] == -999):
-            print('MANTUY')
+
             datas[i] = replacer[j]
+            print(i, datas[i])
 
         j = j + 1
 
@@ -76,9 +77,10 @@ def processData(datas):
     del(datas['Column13'])
 
 
-    c3 = (datas['Column3'])
-    c7= (datas['Column7'])
-    c11 = (datas['Column11'])
+    c3 = (datas['Column3'][0])
+    c7= (datas['Column7'][0])
+    c11 = (datas['Column11'][0])
+    print(c3, c7, c11)
 
 
     datas['Column3_1'] = 1
